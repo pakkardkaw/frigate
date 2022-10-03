@@ -29,6 +29,8 @@ services:
       - "5001:5001"
       - "8080:8080"
     entrypoint: ["sudo", "/init"]
+    environment:
+      - LIBVA_DRIVER_NAME=i965
     command: /bin/sh -c "while sleep 1000; do :; done"
   mqtt:
     container_name: mqtt
